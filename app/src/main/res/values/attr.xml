@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--自定义进度条-->
+    <declare-styleable name="SelfProgressBarView">
+        <!--进度条前端图片的高度-->
+        <attr name="progressBitmapHeight" format="enum|dimension">
+            <enum name="auto" value="-1" />
+            <enum name="fill" value="-2" />
+        </attr>
+        <!--进度条前端图片的宽度-->
+        <attr name="progressBitmapWidth" format="enum|dimension">
+            <enum name="auto" value="-1" />
+            <enum name="fill" value="-2" />
+        </attr>
+        <!--进度条的高度-->
+        <attr name="progressBarHeight" format="dimension" />
+        <!--进度条图片数据源-->
+        <attr name="progressBitmap" format="reference" />
+        <!--进度条描边的宽度-->
+        <attr name="progressStrokeWeight" format="dimension" />
+        <!--进度条描边的颜色-->
+        <attr name="progressBarStrokeColor" format="color" />
+        <!--最内层的描边颜色-->
+        <attr name="progressBarInsideStrokeColor" format="color" />
+        <!--最内层的描边粗细-->
+        <attr name="progressBarInsideStrokeWeight" format="dimension" />
+        <!--进度条背景色-->
+        <attr name="progressBackgroundColor" format="color" />
+        <!--进度条前景色-->
+        <attr name="progressForegroundColor" format="color" />
+        <!--进度条的圆角-->
+        <attr name="progressCorner" format="dimension|enum">
+            <enum name="all" value="-1" />
+        </attr>
+        <!--进度条前景图片，不可以和progressForegroundColor共存-->
+        <attr name="progressForeground" format="reference" />
+        <!--进度条前景图片，不可以和progressBackgroundColor共存-->
+        <attr name="progressBackground" format="reference" />
+        <!--前景色渐变开始的颜色-->
+        <attr name="progressForegroundStartColor" format="color"/>
+        <!--前景色渐变中间的颜色-->
+        <attr name="progressForegroundCenterColor" format="color"/>
+        <!--前景色渐变结束的颜色-->
+        <attr name="progressForegroundEndColor" format="color"/>
+        <!--背景色渐变开始的颜色-->
+        <attr name="progressBackgroundStartColor" format="color"/>
+        <!--背景色渐变中间的颜色-->
+        <attr name="progressBackgroundCenterColor" format="color"/>
+        <!--背景色渐变结束的颜色-->
+        <attr name="progressBackgroundEndColor" format="color"/>
+    </declare-styleable>
+</resources>
