@@ -31,6 +31,7 @@ class MainActivity : AppCompatActivity() {
                 .setCustomView(R.layout.notification_custom_small,R.layout.notification_custom_big)
                 .setContentIntent(fullScreenPendingIntent)
                 .setShowBadge(true)
+                .setSound(null,null)
                 .setVibrate(longArrayOf(0, 1000, 100,1000))
                 .setLight(Color.parseColor("#ff0000"),5000,5000)
                 .createChannelGroup("12","企业")

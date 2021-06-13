@@ -882,16 +882,16 @@ class NotificationHelper {
         /**
          * 设置通知铃声
          * 必须在创建消息渠道前调用
+         * @param soundUri 铃声uri地址
+         * @param audioattributes 音频属性，这个东西比较复杂，可参看手册：https://source.android.google.cn/devices/audio/attributes（要翻墙,无法翻墙的直接看html文件目录下的本地html吧）
+         *
          */
-        fun setSound(soundUri: Uri, audioattributes: AudioAttributes? = null) {
+        fun setSound(soundUri: Uri?, audioattributes: AudioAttributes? = Notification.AUDIO_ATTRIBUTES_DEFAULT):NotificationHelperBuilder{
             manager.setSound(soundUri)
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                audioattributes?.let {
-                    channel?.setSound(soundUri, audioattributes)
-                } ?: let {
-                    channel?.setSound(soundUri, Notification.AUDIO_ATTRIBUTES_DEFAULT)
-                }
+                channel?.setSound(soundUri, audioattributes)
             }
+            return this
         }
 
         /**
