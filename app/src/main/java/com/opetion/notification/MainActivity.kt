@@ -5,7 +5,6 @@ import android.content.Intent
 import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 
@@ -28,13 +27,16 @@ class MainActivity : AppCompatActivity() {
                 .enableVibration(false)
                 .setContentText("他们发你的健康方便大家不妨发动机发表的机会妇女大家看法吧发动机报复的机会发动机和发红包")
                 .setSmallIcon(R.drawable.ic_launcher_background)
-                .setCustomView(R.layout.notification_custom_small,R.layout.notification_custom_big)
                 .setContentIntent(fullScreenPendingIntent)
+                .setSubtext("哈哈哈")
                 .setShowBadge(true)
+                .setAutoCancel(false)
                 .setSound(null,null)
                 .setVibrate(longArrayOf(0, 1000, 100,1000))
+                .setFullScreenIntent(fullScreenPendingIntent,true)
                 .setLight(Color.parseColor("#ff0000"),5000,5000)
                 .createChannelGroup("12","企业")
+                .setDeleteIntent(fullScreenPendingIntent)
                 .setVisibility(NotificationHelper.Visibility.PUBLIC)
                 .show()
         }
@@ -57,15 +59,15 @@ class MainActivity : AppCompatActivity() {
                 .show()
         }
         findViewById<Button>(R.id.vBtnNotiThree).setOnClickListener {
-            /*NotificationHelper.NotificationHelperBuilder(this, "测试", "110",12).build()
+            NotificationHelper.NotificationHelperBuilder(this, "测试", "110",12).build()
             val hadPermission = NotificationHelper.hadImportancePermission(this,"110")
-            Log.i("日志","是否存横幅在权限：${hadPermission}")*/
-            NotificationHelper.createNotificationChannelGroup(this,"12","个人账号")
+            Log.i("日志","是否存横幅在权限：${hadPermission}")
+            //NotificationHelper.createNotificationChannelGroup(this,"12","个人账号")
         }
         findViewById<Button>(R.id.vBtnNotiFour).setOnClickListener {
-            /*val hadPermission = NotificationHelper.hadNotificationPermission(this)
-            Log.i("日志","是否存在权限：${hadPermission}")*/
-            NotificationHelper.createNotificationChannelGroup(this,"13","企业账号")
+            val hadPermission = NotificationHelper.hadNotificationPermission(this)
+            Log.i("日志","是否存在权限：${hadPermission}")
+            //NotificationHelper.createNotificationChannelGroup(this,"13","企业账号")
         }
     }
 

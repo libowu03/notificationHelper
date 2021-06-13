@@ -60,8 +60,7 @@ class NotificationHelper {
          * @param channelId 通知渠道的id
          */
         fun hadImportancePermission(activity: Context, channelId: String): Boolean {
-            val mNotificationManager =
-                activity.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val mNotificationManager = activity.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 val channel = mNotificationManager.getNotificationChannel(channelId)
                 //是否开启了通知权限，默认的channel是开启通知权限的，除非用户手动关闭。
@@ -568,8 +567,9 @@ class NotificationHelper {
             return this
         }
 
-        fun setSubtext(subtext: CharSequence) {
+        fun setSubtext(subtext: CharSequence):NotificationHelperBuilder{
             manager.setSubText(subtext)
+            return this
         }
 
         /**
