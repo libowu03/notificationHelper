@@ -6,6 +6,8 @@
     <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE"/>
     <!--全屏通知权限-->
     <uses-permission android:name="android.permission.USE_FULL_SCREEN_INTENT"/>
+    <!--控制震动权限-->
+    <uses-permission android:name="android.permission.VIBRATE"/>
 
     <application
         android:allowBackup="true"
